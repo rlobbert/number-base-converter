@@ -2,6 +2,11 @@
 #include <string>
 using namespace std;
 
+int to_decimal(int number) {
+
+    
+}
+
 int to_binary(int number) {
     int total;
     string binary = "";
@@ -15,7 +20,6 @@ int to_binary(int number) {
             binary += to_string(total);
             number /= 2;
         }
-    
 
         for (int i = binary.length(); i >= 0; i--) {
             cout << binary[i];
@@ -33,8 +37,7 @@ int main() {
         cout << "|     Conversor    |\n";
         cout << "---------------------------------\n";
         cout << "| 1 - Decimal to Binary         |\n";
-        cout << "| 2 - Decimal to Hexadecimal    |\n";
-        cout << "| 3 - Decimal to Octal          |\n";
+        cout << "| 2 - Binary to Decimal         |\n";      
         cout << "---------------------------------\n";
         cout << "| 0 - Exit                      |\n";
         cout << "---------------------------------\n";
@@ -47,6 +50,9 @@ int main() {
         switch(option) {
             case 1:
                 to_binary(number);
+                break;
+            case 1:
+                to_decimal(number);
                 break;
             case 0:
                 cout << "Exiting program. Goodbye\n";
