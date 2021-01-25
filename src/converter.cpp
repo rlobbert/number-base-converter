@@ -8,7 +8,7 @@ int return_pow(int base, int exp) {
 }
 
 int return_number(int number, int i) {
-  return number % return_pow(10, (i+1)) * return_pow(10, i);
+  return number % return_pow(10, (i+1)) / return_pow(10, i);
 }
 
 int to_decimal(int number) {
@@ -16,7 +16,7 @@ int to_decimal(int number) {
 
   for(int i = 0; i <= to_string(number).length(); i++) {
     total = 0;
-    total += return_number(number, i) * return_pow(2, i);
+    total = return_number(number, i) * return_pow(2, i);
     sum += total;
   }
 
