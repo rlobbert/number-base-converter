@@ -44,10 +44,30 @@ int to_binary(int number) {
     return 0;
 }
 
+int to_octal(int number) {
+  int total;
+  string octal;
+
+  if (number == 0) {
+      cout << "0";
+  }
+  else {
+      while (number > 0) {
+          total = number % 8;
+          octal += to_string(total);
+          number /= 8;
+      }
+
+      for (int i = octal.length(); i >= 0; i--) {
+          cout << octal[i];
+      }
+  }
+  return 0;
+}
+
 int main() {
 
     int number, option, loop = 1;
-
 
     while (loop == 1) {
         cout << "\n--------------------\n";
@@ -55,6 +75,7 @@ int main() {
         cout << "---------------------------------\n";
         cout << "| 1 - Decimal to Binary         |\n";
         cout << "| 2 - Binary to Decimal         |\n";
+        cout << "| 3 - Decimal to Octal          |\n";
         cout << "---------------------------------\n";
         cout << "| 0 - Exit                      |\n";
         cout << "---------------------------------\n";
@@ -71,6 +92,11 @@ int main() {
                 cout << "Number: ";
                 cin >> number;
                 cout << to_decimal(number);
+                break;
+            case 3:
+                cout << "Number: ";
+                cin >> number;
+                to_octal(number);
                 break;
             case 0:
                 cout << "Exiting program. Goodbye\n";
